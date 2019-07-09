@@ -1,4 +1,4 @@
-Event Ticket Management
+# Event Ticket Management
 
 Simple Event Ticket Management for AngularJS using Webpack. Should be noted that apart from the
 pre-installed angular package, this workflow is pretty much generic.
@@ -52,16 +52,15 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 ### Build files
 
-* single run: `npm run build`
 * build files and watch: `npm start`
 
 ### Frontend
 
-For frontend i have used `bootstrap` library. Bootstrap is an open source toolkit for developing with `HTML, CSS, and JS`.
+For frontend I have used `bootstrap` library. Bootstrap is an open source toolkit for developing with `HTML, CSS, and JS`.
 
 ### Styles
 
-For styles i have used `sass` preprocessor. Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+For styles I have used `sass` preprocessor. Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
 ### Application
 
