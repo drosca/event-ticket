@@ -1,0 +1,81 @@
+<div class="nav-menu">
+    <div class="container">
+        <ul>
+            <li class="active"><a href="#">Events</a></li>
+            <li><a href="#">Other Link</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container event-view">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="events-header">
+                <div class="row align-bottom">
+                    <div class="col-md-6">
+                        <div class="title">
+                            {{viewCtrl.event.event_name}} <span class="date">{{viewCtrl.event.event_date | date: mediumDate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 t-right">
+                        <button class="btn btn-default create-event" ng-click="viewCtrl.goToHome()">
+                            Go to events
+                        </button>
+                        <button class="btn btn-success" ng-click="viewCtrl.downloadCSV({ filename:'stock-data.csv'})">
+                            Download CSV
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-view">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="ticket-info total">
+                            Total: {{ viewCtrl.tickets.total_tickets }}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ticket-info available">
+                            Available: {{ viewCtrl.tickets.available_tickets }}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ticket-info redeemed">
+                            Redeemed: {{ viewCtrl.tickets.redeemed_tickets }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="events-header">
+                <div class="row align-bottom marg-b-15">
+                    <div class="col-md-12">
+                        <div class="title">
+                            Check Your Ticket Status
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-center">
+                    <div class="col-md-4">
+                        <input type="text"
+                               required
+                               ng-model="viewCtrl.ticketId"
+                               class="form-control"
+                               id="name" aria-describedby="name" placeholder="Enter your particular ticket code">
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-info" ng-disabled="!viewCtrl.ticketId" ng-click="viewCtrl.checkStatus(viewCtrl.ticketId)">Check
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                        <span  ng-if="viewCtrl.status.length"
+                               ng-class="{'badge-success': viewCtrl.status === 'OK', 'badge-danger': viewCtrl.status === 'REDEEMED'}"
+                               class="badge">{{viewCtrl.status === 'OK' ? 'AVAILABLE' : 'REDEEMED'}}</span>
+                    </div>
+                    <div class="col-md-5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

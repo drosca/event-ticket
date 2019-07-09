@@ -1,0 +1,56 @@
+<div class="nav-menu">
+    <div class="container">
+        <ul>
+            <li class="active"><a href="#">Events</a></li>
+            <li><a href="#">Other Link</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-container">
+                <div class="header">
+                    <h4>{{ createCtrl.$stateParams.id ? 'Edit Event' : 'Create Event' }}</h4>
+                    <a ui-sref="events">Back to Events</a>
+                </div>
+                <form name="createEventForm" class="form">
+                    <div class="form-group">
+                        <label for="name">Event name</label>
+                        <input type="text"
+                               required
+                               ng-model="createCtrl.event.event_name"
+                               class="form-control"
+                               id="name" aria-describedby="name" placeholder="Enter event name">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <datepicker date-format="yyyy-MM-dd" class="marg-b-15">
+                            <input ng-model="createCtrl.event.event_date" required id="date" class="form-control" type="text"/>
+                        </datepicker>
+                        <!--<input type="text" class="form-control" id="date" aria-describedby="date" placeholder="Event Date">-->
+                    </div>
+                    <div class="form-group">
+                        <label for="tickets">Number of tickets</label>
+                        <input type="number"
+                               ng-model="createCtrl.event.number_of_tickets"
+                               class="form-control" required id="tickets" aria-describedby="tickets" placeholder="Tickets">
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-success create-event"
+                                ng-disabled="!createCtrl.event.event_name
+                                || !createCtrl.event.event_date
+                                || !createCtrl.event.number_of_tickets"
+                                ng-click="createCtrl.createEvent()">
+                            {{ createCtrl.$stateParams.id ? 'Update' : 'Create' }}
+                        </button>
+                        <button class="btn btn-default" ng-click="createCtrl.goToHome()">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

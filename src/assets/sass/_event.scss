@@ -1,0 +1,99 @@
+.events-header {
+  padding: 20px 0;
+
+  .title {
+    font-size: 25px;
+  }
+}
+
+.header-of-events {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.event-row {
+  background: #fff;
+  padding: 20px;
+  //box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  margin-bottom: 5px;
+  border-radius: 4px;
+
+  .event-name {
+    a {
+      color: #ee7300;
+      font-weight: 600;
+    }
+  }
+  
+  .event-date {
+    color: #999;
+  }
+  
+  .event-tickets {
+    .total {
+      color: #999;
+    }
+  }
+}
+
+.form-container {
+  width: 500px;
+  margin: 60px auto;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #17a2b8;
+    }
+  }
+
+  h4 {
+    //font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+  }
+}
+
+.event-view {
+  .events-header {
+    //margin-bottom: 20px;
+    .align-bottom {
+      align-items: flex-end;
+    }
+
+    .date {
+      display: block;
+      color: #999;
+      font-size: 15px;
+      margin: 0;
+    }
+  }
+}
+
+.ticket-info {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  //font-size: 25px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.08);
+
+  &.total {
+    color: #333;
+  }
+
+  &.available {
+    color: #28a645;
+  }
+
+  &.redeemed {
+    color: #db3545;
+  }
+}
