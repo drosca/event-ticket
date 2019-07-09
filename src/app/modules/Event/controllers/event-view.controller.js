@@ -1,10 +1,12 @@
 export default class EventViewController {
-  constructor($state, $stateParams, eventsServices) {
+  constructor($state, $stateParams, $timeout, eventsServices) {
     this.$state = $state;
+    this.$timeout = $timeout;
     this.$stateParams = $stateParams;
     this.eventsServices = eventsServices;
     this.event = {};
     this.ticketId = '';
+    this.successMessage = '';
     this.status = '';
     this.tickets = [];
     this.stockData = [];
@@ -43,7 +45,6 @@ export default class EventViewController {
 
   checkStatus(id) {
     this.eventsServices.checkStatus(id).then(resp => {
-      console.log(resp);
       this.status = resp.data.status;
     }).catch(() => {
       this.status = 'err'
@@ -110,7 +111,17 @@ export default class EventViewController {
     link.setAttribute('download', filename);
     link.click();
   }
+
+  buyTicket() {
+    this.successMessage = 'Congratulations! Ticket was bought successfully!';
+    this.status = '';
+    this.ticketId = '';
+
+    this.$timeout(() => {
+      this.successMessage = '';
+    }, 3000);
+  }
 }
 
-angular.module('event', ['$state', '$stateParams', 'eventsServices'])
+angular.module('event', ['$state', '$stateParams', '$timeout', 'eventsServices'])
   .controller('EventViewController', EventViewController);

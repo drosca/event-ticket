@@ -64,21 +64,26 @@
                                class="form-control"
                                id="name" aria-describedby="name" placeholder="Enter your particular ticket code">
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-6">
                         <button class="btn btn-info" ng-disabled="!viewCtrl.ticketId"
                                 ng-click="viewCtrl.checkStatus(viewCtrl.ticketId)">Check
                         </button>
-                    </div>
-                    <div class="col-md-1">
+                        <button class="btn btn-success"
+                                ng-disabled="!viewCtrl.status.length || viewCtrl.status !== 'OK'"
+                                ng-click="viewCtrl.buyTicket(viewCtrl.ticketId)">Buy
+                        </button>
                         <span ng-if="viewCtrl.status.length"
-                              ng-class="{'badge-success': viewCtrl.status === 'OK',
+                              ng-class="{'badge-primary': viewCtrl.status === 'OK',
                                          'badge-danger': viewCtrl.status === 'REDEEMED',
                                          'badge-secondary': viewCtrl.status === 'err'}"
                               class="badge">
                             {{ viewCtrl.displayTicketStatus(viewCtrl.status) }}
                         </span>
+                        <span ng-if="viewCtrl.successMessage.length"
+                              class="badge badge-success">
+                            {{ viewCtrl.successMessage }}
+                        </span>
                     </div>
-                    <div class="col-md-5"></div>
                 </div>
             </div>
         </div>
