@@ -45,7 +45,6 @@ const Service = ($http) => {
     }
 
     static checkStatus(id) {
-      console.log(id);
       return $http.get(`http://3.122.252.138/ticket/${id}/`, {});
     }
   }

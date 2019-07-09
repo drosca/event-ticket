@@ -52,7 +52,7 @@
                 <div class="row align-bottom marg-b-15">
                     <div class="col-md-12">
                         <div class="title">
-                            Check Your Ticket Status
+                            Check the status of a particular ticket
                         </div>
                     </div>
                 </div>
@@ -65,13 +65,18 @@
                                id="name" aria-describedby="name" placeholder="Enter your particular ticket code">
                     </div>
                     <div class="col-md-1">
-                        <button class="btn btn-info" ng-disabled="!viewCtrl.ticketId" ng-click="viewCtrl.checkStatus(viewCtrl.ticketId)">Check
+                        <button class="btn btn-info" ng-disabled="!viewCtrl.ticketId"
+                                ng-click="viewCtrl.checkStatus(viewCtrl.ticketId)">Check
                         </button>
                     </div>
                     <div class="col-md-1">
-                        <span  ng-if="viewCtrl.status.length"
-                               ng-class="{'badge-success': viewCtrl.status === 'OK', 'badge-danger': viewCtrl.status === 'REDEEMED'}"
-                               class="badge">{{viewCtrl.status === 'OK' ? 'AVAILABLE' : 'REDEEMED'}}</span>
+                        <span ng-if="viewCtrl.status.length"
+                              ng-class="{'badge-success': viewCtrl.status === 'OK',
+                                         'badge-danger': viewCtrl.status === 'REDEEMED',
+                                         'badge-secondary': viewCtrl.status === 'err'}"
+                              class="badge">
+                            {{ viewCtrl.displayTicketStatus(viewCtrl.status) }}
+                        </span>
                     </div>
                     <div class="col-md-5"></div>
                 </div>

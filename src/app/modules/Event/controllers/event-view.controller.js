@@ -35,9 +35,18 @@ export default class EventViewController {
     })
   }
 
+  displayTicketStatus(status) {
+    return status === 'OK' ? 'AVAILABLE'
+      : status === 'REDEEMED' ? 'REDEEMED'
+      : 'TICKET NOT FOUND'
+  }
+
   checkStatus(id) {
     this.eventsServices.checkStatus(id).then(resp => {
+      console.log(resp);
       this.status = resp.data.status;
+    }).catch(() => {
+      this.status = 'err'
     })
   }
 

@@ -56,11 +56,8 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 ### Frontend
 
-For frontend I have used `bootstrap` library. Bootstrap is an open source toolkit for developing with `HTML, CSS, and JS`.
-
-### Styles
-
-For styles I have used `sass` preprocessor. Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+In project I have used `bootstrap` library. For styles I have used `sass` preprocessor.
+Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
 ### Application
 
