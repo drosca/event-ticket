@@ -43,7 +43,7 @@
                             </span>
                         </div>
                         <div class="col-md-4">
-                            <span class="event-date">{{event.event_date}}</span>
+                            <span class="event-date">{{event.event_date | date: mediumDate}}</span>
                         </div>
                         <div class="col-md-3">
                             <span class="event-tickets">{{event.number_of_tickets}}</span>

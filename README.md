@@ -1,17 +1,13 @@
-# angularjs-webpack
+Event Ticket Management
 
-[![Dependency Status](https://david-dm.org/preboot/angularjs-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angularjs-webpack/dev-status.svg)](https://david-dm.org/preboot/angularjs-webpack#info=devDependencies)
-
-A complete, yet simple, starter for AngularJS using Webpack.
-
-This workflow serves as a starting point for building AngularJS (1.x) applications using Webpack 2.x. Should be noted that apart from the pre-installed angular package, this workflow is pretty much generic.
+Simple Event Ticket Management for AngularJS using Webpack. Should be noted that apart from the
+pre-installed angular package, this workflow is pretty much generic.
 
 * Heavily commented webpack configuration with reasonable defaults.
 * ES6, and ES7 support with babel.
 * Source maps included in all builds.
 * Development server with live reload.
 * Production builds with cache busting.
-* Testing environment using karma to run tests and jasmine as the framework.
 * Code coverage when tests are run.
 * No gulp and no grunt, just npm scripts.
 
@@ -19,11 +15,9 @@ This workflow serves as a starting point for building AngularJS (1.x) applicatio
 
 ### Quick start
 
-> Clone/Download the repo then edit `app.js` inside [`/src/app/app.js`](/src/app/app.js)
-
 ```bash
 # clone our repo
-$ git clone https://github.com/preboot/angularjs-webpack.git my-app
+$ git clone https://github.com/drosca/event-ticket my-app
 
 # change directory to your app
 $ cd my-app
@@ -37,16 +31,6 @@ $ npm start
 
 go to [http://localhost:8080](http://localhost:8080) in your browser.
 
-# Table of Contents
-
-* [Getting Started](#getting-started)
-    * [Dependencies](#dependencies)
-    * [Installing](#installing)
-    * [Running the app](#running-the-app)
-    * [Developing](#developing)
-    * [Testing](#testing)
-* [License](#license)
-
 # Getting Started
 
 ## Dependencies
@@ -54,12 +38,6 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 What you need to run this app:
 * `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
 * Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+)
-
-## Installing
-
-* `fork` this repo
-* `clone` your fork
-* `npm install` to install all dependencies
 
 ## Running the app
 
@@ -77,13 +55,24 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 * single run: `npm run build`
 * build files and watch: `npm start`
 
-## Testing
+### Frontend
 
-#### 1. Unit Tests
+For frontend i have used `bootstrap` library. Bootstrap is an open source toolkit for developing with `HTML, CSS, and JS`.
 
-* single run: `npm test`
-* live mode (TDD style): `npm run test-watch`
+### Styles
 
-# License
+For styles i have used `sass` preprocessor. Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
-[MIT](/LICENSE)
+### Application
+
+When you open the application, you will see the page with `list of events`.
+If you want to see each `Event` information, press on the name of `Event` from the list.
+For `editing` each event, press `Edit` link from the list.
+For `creating a new event`, press `Create Event` button.
+
+On the `Event View` page, you will see the number of tickets `(Available, Redeemed and Total Number)`.
+Also you can `Download CSV` with all available tickets.
+If you want to check the status of ticket, type the `ticket id` in `input` and press `Check` button.
+Then you will see the label with ticket `status`.
+
+
