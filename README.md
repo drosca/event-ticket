@@ -16,7 +16,7 @@ pre-installed angular package, this workflow is pretty much generic.
 ### Quick start
 
 ```bash
-# clone our repo
+# clone repo
 $ git clone https://github.com/drosca/event-ticket my-app
 
 # change directory to your app
@@ -32,12 +32,6 @@ $ npm start
 go to [http://localhost:8080](http://localhost:8080) in your browser.
 
 # Getting Started
-
-## Dependencies
-
-What you need to run this app:
-* `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
-* Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+)
 
 ## Running the app
 
@@ -56,7 +50,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 ### Frontend
 
-In project I have used `bootstrap` library. For styles I have used `sass` preprocessor.
+In this project I have used `bootstrap` library. For styles I have used `sass` preprocessor.
 Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
 ### Application
@@ -70,5 +64,6 @@ On the `Event View` page, you will see the number of tickets `(Available, Redeem
 Also you can `Download CSV` with all available tickets.
 If you want to check the status of ticket, type the `ticket id` in `input` and press `Check` button.
 Then you will see the label with ticket `status`.
+If `ticket status` is `AVAILABLE` you can buy the ticket on pressing `Buy` button.
 
 
